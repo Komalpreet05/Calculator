@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.calc-body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.content {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+input#display {
+  width: 100%;
+  appearance: none;
+  background: lightgray;
+  /* border: 6px solid #0e0e0d; */
+  border-radius: 10px;
+  height: 35px;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+button.btn {
+  appearance: none;
+  width: 100%;
+  border: 1px solid blue;
+  height: 100%;
+  padding: 10px;
+}
