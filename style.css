@@ -46,6 +46,7 @@ input#display {
   height: 4rem;
   border: none;
   margin-bottom: 1rem;
+  font-size: 35px;
 }
 
 button.btn {
