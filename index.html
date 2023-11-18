@@ -11,11 +11,11 @@
       <div class="container">
         <div class="content">
           <div class="calc-display">
-            <input type="text" id="display" readonly />
+            <input type="text" id="display" name="display" readonly />
           </div>
           <div class="calc-body">
             <div class="box box1">
-              <button class="btn">CE</button>
+              <button class="btn" onclick="display.value=''">CE</button>
             </div>
             <div class="box box2"><button class="btn">+/-</button></div>
             <div class="box box3"><button class="btn">%</button></div>
@@ -23,7 +23,9 @@
             <div class="box box4">
               <button class="btn btnNew">/</button>
             </div>
-            <div class="box box5"><button class="btn">7</button></div>
+            <div class="box box5">
+              <button class="btn" onclick="display.value += '7'">7</button>
+            </div>
             <div class="box box6"><button class="btn">8</button></div>
 
             <div class="box box7"><button class="btn">9</button></div>

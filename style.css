@@ -11,11 +11,7 @@
   width: 100vw;
   height: 100vh;
   background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  background: #000000a6;
 }
 
 .container {
@@ -35,6 +31,7 @@
 .content {
   border: 6px solid black;
   padding: 30px;
+  background-color: white;
 }
 
 input#display {
@@ -47,6 +44,8 @@ input#display {
   border: none;
   margin-bottom: 1rem;
   font-size: 35px;
+  text-align: right;
+  padding-right: 8px;
 }
 
 button.btn {
