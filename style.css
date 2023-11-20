@@ -34,11 +34,11 @@
   background-color: white;
 }
 
-input#display {
+/* input#display {
   width: 100%;
   appearance: none;
   background: lavender;
-  /* border: 6px solid #0e0e0d; */
+  
   border-radius: 10px;
   height: 4rem;
   border: none;
@@ -46,7 +46,8 @@ input#display {
   font-size: 35px;
   text-align: right;
   padding-right: 8px;
-}
+} */
+/* border: 6px solid #0e0e0d; */
 
 button.btn {
   appearance: none;
@@ -75,4 +76,27 @@ button#btn17,
 button#btn18,
 button#btn19 {
   border-bottom: 2px solid black;
+}
+
+.calc-display {
+  background-color: lavender;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  min-height: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.previous-operand {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.current-operand {
+  color: red;
+  font-size: 2.5rem;
 }
