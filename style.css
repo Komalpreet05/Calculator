@@ -11,7 +11,6 @@
   width: 100vw;
   height: 100vh;
   background: rgb(238, 174, 202);
-  background: #000000a6;
 }
 
 .container {
@@ -29,9 +28,7 @@
 }
 
 .content {
-  border: 6px solid black;
-  padding: 30px;
-  background-color: white;
+  background-color: black;
 }
 
 /* input#display {
@@ -79,7 +76,7 @@ button#btn19 {
 }
 
 .calc-display {
-  background-color: lavender;
+  background-color: transparent;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -92,11 +89,11 @@ button#btn19 {
 }
 
 .previous-operand {
-  color: red;
+  color: white;
   font-size: 1.5rem;
 }
 
 .current-operand {
-  color: red;
+  color: white;
   font-size: 2.5rem;
 }
