@@ -20,19 +20,16 @@ class Calculator {
 
     appendNumber(number) {
         console.log("current " + this.currentOperand);
-        if (number === "." && this.currentOperand.includes('.')) {
+        if (number === "." && this.currentOperand.toString().includes('.')) {
             return;
         }
-        if (this.currentOperand.split("")[0] === "0") {
-            this.currentOperand = ""
 
-        }
-        console.log(this.currentOperand.split(""));
+        //console.log(this.currentOperand.split(""));
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
     operationClick(operation) {
-        if (this.operation === '') return;
+        if (this.operation === '' || this.currentOperand === '') return;
         if (this.previousOperand !== '') {
             this.compute();
         }
@@ -55,10 +52,10 @@ class Calculator {
             case '-':
                 computation = prev - current;
                 break;
-            case '*':
+            case '×':
                 computation = prev * current;
                 break;
-            case '/':
+            case '÷':
                 computation = prev / current;
                 break;
             default:
@@ -71,12 +68,26 @@ class Calculator {
 
     }
 
+    specialCase() {
+        const current = parseFloat(this.currentOperand);
+        if (isNaN(current)) return;
+        this.currentOperand = current / 100;
+        this.operation = undefined;
+        this.previousOperand = '';
+    }
 
     updateDisplay() {
+        let text = this.currentOperand.toString();
+        console.log(text);
 
-        this.currentOperandText.innerText = this.currentOperand;
+        let other = "0000komal".replace(/^0+/, "");
+        console.log("checking : ", other);
+        this.currentOperandText.innerText = this.currentOperand.toString().replace(/^0+/, "");
+
+        console.log(this.previousOperand);
+        //this.previousOperandText.innerText = this.previousOperand;
         if (this.operation != null) {
-            this.previousOperandText.innerText = `${this.previousOperand} ${this.operation}`;
+            this.previousOperandText.innerText = `${this.previousOperand.toString().replace(/^0+/, "")} ${this.operation}`;
         }
         else {
             this.previousOperandText.innerText = '';
@@ -98,6 +109,8 @@ const previousOperandText = document.querySelector(`[data-previousOperand]`);
 const currentOperandText = document.querySelector(`[data-currentOperand]`);
 
 const calculator = new Calculator(previousOperandText, currentOperandText);
+
+const special = document.getElementById("specialCase");
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -130,5 +143,11 @@ clearButton.addEventListener('click', button => {
 deleteButton.addEventListener('click', button => {
     console.log("equal click");
     calculator.delete();
+    calculator.updateDisplay();
+})
+
+special.addEventListener('click', button => {
+    console.log("equal click");
+    calculator.specialCase();
     calculator.updateDisplay();
 })
